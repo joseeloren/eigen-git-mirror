@@ -69,10 +69,10 @@ public:
   * \tparam _Cols Number of columns, or \b Dynamic
   *
   * The remaining template parameters are optional -- in most cases you don't have to worry about them.
-  * \tparam _Options A combination of either \b #RowMajor or \b #ColMajor, and of either
-  *                 \b #AutoAlign or \b #DontAlign.
-  *                 The former controls \ref TopicStorageOrders "storage order", and defaults to column-major. The latter controls alignment, which is required
-  *                 for vectorization. It defaults to aligning matrices except for fixed sizes that aren't a multiple of the packet size.
+  * \tparam _Options A combination of either \b #RowMajor or \b #ColMajor, of either
+  *                 \b #AutoAlign or \b #DontAlign, and of either \b #Sym or \b #NonSym.
+  *                 The former controls \ref TopicStorageOrders "storage order", and defaults to column-major. The second controls alignment, which is required
+  *                 for vectorization. It defaults to aligning matrices except for fixed sizes that aren't a multiple of the packet size. The latter controls if the type stored is symmetrical or not. It defaults is non-symmetrical. 
   * \tparam _MaxRows Maximum number of rows. Defaults to \a _Rows (\ref maxrows "note").
   * \tparam _MaxCols Maximum number of columns. Defaults to \a _Cols (\ref maxrows "note").
   *

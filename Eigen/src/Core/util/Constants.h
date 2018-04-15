@@ -327,7 +327,11 @@ enum StorageOptions {
   /** Align the matrix itself if it is vectorizable fixed-size */
   AutoAlign = 0,
   /** Don't require alignment for the matrix itself (the array of coefficients, if dynamically allocated, may still be requested to be aligned) */ // FIXME --- clarify the situation
-  DontAlign = 0x2
+  DontAlign = 0x2,
+  /** Stored type is non-symmetrical */
+  NonSym = 0,
+  /** Stored type is symmetrical */
+  Sym = 0x4
 };
 
 /** \ingroup enums
