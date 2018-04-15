@@ -194,6 +194,13 @@ struct evaluator<PlainObjectBase<Derived> >
   EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
   CoeffReturnType coeff(Index row, Index col) const
   {
+    if (IsSym)
+    {
+      if (row < col)
+	return m_d.data[(2*m_d.outerStride()-(row-1))*row*0.5+(col-row)];
+      else
+	return m_d.data[(2*m_d.outerStride()-(col-1))*col*0.5+(row-col)];
+    }      
     if (IsRowMajor)
       return m_d.data[row * m_d.outerStride() + col];
     else
